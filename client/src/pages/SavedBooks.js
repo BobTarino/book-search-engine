@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
-
+import { GET_ME } from '../utils/queries';
+import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
@@ -13,7 +14,7 @@ const SavedBooks = () => {
   const userData = data?.me || [];
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>LOADING...</div>
   }
 
   if (!userData?.username) {
@@ -42,10 +43,6 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
-  if (!userDataLength) {
-    return <h2>LOADING...</h2>;
-  }
 
   return (
     <>
