@@ -18,11 +18,12 @@ async function startApolloServer() {
     context: authMiddleware
   });
 
+  await server.start();
   const app = express();
   // integrate our Apollo server with the Express application as middleware
   server.applyMiddleware({ app });
 
-  app.use(express.urlencoded({ extended: true }));
+  app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
   // Serve up static assets // only comes into effect when in production
