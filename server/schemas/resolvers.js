@@ -23,6 +23,23 @@ const resolvers = {
           
             return { token, user };
         },
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+          
+            if (!user) {
+              throw new AuthenticationError('Incorrect credentials');
+            }
+          
+            const correctPass = await user.isCorrectPassword(password);
+          
+            if (!correctPass) {
+              throw new AuthenticationError('Incorrect credentials');
+            }
+          
+            const token = signToken(user);
+            return { token, user };
+        },
+        
 
 
 
