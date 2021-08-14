@@ -30,20 +30,20 @@ const resolvers = {
               throw new AuthenticationError('Incorrect credentials');
             }
           
-            const correctPass = await user.isCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
           
-            if (!correctPass) {
+            if (!correctPw) {
               throw new AuthenticationError('Incorrect credentials');
             }
           
             const token = signToken(user);
             return { token, user };
         },
-        saveBook: async (parent, { authors, description, title, bookId, image, link }, context) => {
+        saveBook: async (parent, { bookData }, context) => {
             if (context.user) {
                 const updatedBookArray = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: { authors, description, title, bookId, image } } },
+                    { $push: { savedBooks: bookData } },
                     { new: true }
                 ).populate('savedBooks')
 

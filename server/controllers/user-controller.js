@@ -34,9 +34,9 @@ module.exports = {
       return res.status(400).json({ message: "Can't find this user" });
     }
 
-    const correctPass = await user.isCorrectPassword(body.password);
+    const correctPw = await user.isCorrectPassword(body.password);
 
-    if (!correctPass) {
+    if (!correctPw) {
       return res.status(400).json({ message: 'Wrong password!' });
     }
     const token = signToken(user);
