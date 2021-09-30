@@ -10,6 +10,10 @@ AS AN avid reader
 I WANT to search for new books to read
 SO THAT I can keep a list of books to purchase
 
+## Features
+- Information is retrived via the publicly available Google Books AP.
+- Save feature allows users to keep a wishlist
+
 
 ## Table of Contents
 - [Installation](#install)
@@ -19,7 +23,10 @@ SO THAT I can keep a list of books to purchase
 - [Deploy](#deploy)
 - [Questions](#questions)
 ## Installation
-Clone files on GitHub to your machine. You will then run 'npm i' and it will install the needed dependencies.
+* Clone files on GitHub to your machine. 
+* You will then run 'npm i' and it will install the needed dependencies.
+
+#### Screenshots
 ![Screen Shot 2021-08-13 at 7 56 26 PM](https://user-images.githubusercontent.com/79377937/129431866-493919c8-52d5-4dbb-bc3c-73d72b567868.png)
 ![Screen Shot 2021-08-13 at 7 56 40 PM](https://user-images.githubusercontent.com/79377937/129431868-d8dbb3c3-6df8-4a4e-b0e3-af0349846285.png)
 ![Screen Shot 2021-08-13 at 9 11 30 PM](https://user-images.githubusercontent.com/79377937/129431869-cbe9dbdc-0cce-47db-81b0-f9b167fb5080.png)
