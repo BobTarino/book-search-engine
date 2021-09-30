@@ -4,7 +4,7 @@
 ![badgeImage](https://img.shields.io/badge/license-MIT-blue)
 
 ## Description
-A single page portfolio created with React.
+A single page app created with React.
 ## UserStory
 AS AN avid reader
 I WANT to search for new books to read
